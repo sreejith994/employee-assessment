@@ -1,2 +1,15 @@
-spring.application.name: employee-api
-server.port: 8111
+spring:
+  application:
+    name: employee-api
+  server:
+    port: 8111
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=5m
+
+com:
+  reliaquest:
+    api:
+      mockemployeeservice:
+        baseurl: http://localhost:8112/api/v1/employee
